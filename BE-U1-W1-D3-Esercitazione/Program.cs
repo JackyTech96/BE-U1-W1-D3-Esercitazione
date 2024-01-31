@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BE_U1_W1_D3_Esercitazione
 {
@@ -10,35 +6,50 @@ namespace BE_U1_W1_D3_Esercitazione
     {
         static void Main(string[] args)
         {
+            // Creazione di un oggetto ContoCorrente
             ContoCorrente contoUtente1 = new ContoCorrente();
-            contoUtente1.AperturaConto("Luca Rossi", 123456789);
 
+            // Apertura del conto per l'utente con numero conto 123456789
+            contoUtente1.AperturaConto( 123456789);
+
+            // Visualizzazione del saldo iniziale del conto
             contoUtente1.VisualizzaSaldo();
+
+            // Versamento di 1500 euro nel conto
             contoUtente1.Versamento(1500);
+
+            // Visualizzazione del saldo dopo il versamento
             contoUtente1.VisualizzaSaldo();
+
+            // Prelievo di 500 euro dal conto
             contoUtente1.Prelievo(500);
+
+            // Visualizzazione del saldo dopo il prelievo
             contoUtente1.VisualizzaSaldo();
 
 
             //----------------------------------------------------//
 
 
+            // Array di stringhe
             string[] vettore = { "Mario", "Luca", "Attila", "Beppe", "Giuda" };
 
+            // Richiesta all'utente di inserire un nome da cercare
             Console.WriteLine("Inserisci il nome da cercare:");
-           
             string nome = Console.ReadLine();
             bool nomePresente = false;
 
+            // Ciclo per cercare il nome nell'array
             for (int i = 0; i < vettore.Length; i++)
             {
                 if (nome == vettore[i])
                 {
                     nomePresente = true;
-                    break; 
+                    break;
                 }
             }
 
+            // Stampa se il nome è presente o meno nell'array
             if (nomePresente)
             {
                 Console.WriteLine("Il nome è presente nella lista.");
@@ -49,25 +60,29 @@ namespace BE_U1_W1_D3_Esercitazione
             }
 
 
-
             //----------------------------------------------------//
 
 
+            // Array di interi
             int[] vettore2 = new int[3];
 
+            // Assegnazione di valori agli elementi dell'array
             int x = vettore2[0];
             int y = vettore2[1];
             int z = vettore2[2];
 
-            x = 3; y= 5; z = 7;   
+            x = 3; y = 5; z = 7;
 
+            // Calcolo della somma e della media degli elementi dell'array di interi
             int somma = x + y + z;
-            int media = somma/vettore2.Length;
+            int media = somma / vettore2.Length;
 
+            // Stampa della somma e della media
             Console.WriteLine("La somma dei numeri è: " + somma);
             Console.WriteLine("La media dei numeri è: " + media);
 
-            Console.ReadLine() ;
+            // Attesa dell'input dell'utente prima di chiudere l'applicazione
+            Console.ReadLine();
         }
     }
 }
